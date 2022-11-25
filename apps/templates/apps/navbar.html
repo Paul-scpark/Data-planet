@@ -4,6 +4,15 @@
 
     <div class="sub-menu">
       <ul class="menu">
+
+        {% comment %} <li class="nav-item">
+          {% if request.user.is_authenticated %}
+          <a href="/logout">{{ user.username }} (로그아웃)</a>
+          {% else %}
+          <a href="/login">로그인</a>
+          {% endif %}
+        </li> {% endcomment %}
+
         <li><a href="/login">로그인</a></li>
         <li><a href="/signup">회원가입</a></li>
       </ul>

@@ -7,6 +7,7 @@ urlpatterns = [
     path('overview/platform_info/', views.overview_platform),
     path('overview/eda/', views.overview_eda),
     path('login/', views.login),
+    # path('logout/', views.logout),
     path('search/category/', views.search_category),
     path('search/detail/', views.search_detail),
     path('profile/', views.profile),
