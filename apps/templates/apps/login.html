@@ -3,77 +3,77 @@
 <html lang="ko">
 
 <head>
-  <link rel="stylesheet" href="{% static 'css/common.css' %}" />
-      <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/common.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
 
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- 오픈 그래프 : 카톡과 같은 메신저에서 띄워주는 정보 -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Data Planet" />
-  <meta property="og:title" content="Data Planet" />
-  <meta property="og:description" content="데이터 플래닛" />
-  <!--  <meta property="og:image" content=" />-->
-  <!--  <meta property="og:url" content="" />-->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 오픈 그래프 : 카톡과 같은 메신저에서 띄워주는 정보 -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Data Planet"/>
+    <meta property="og:title" content="Data Planet"/>
+    <meta property="og:description" content="데이터 플래닛"/>
+    <!--  <meta property="og:image" content=" />-->
+    <!--  <meta property="og:url" content="" />-->
 
-  <!-- 트위터 카드 : 트위터와 같은 소셜 미디어로 공유될 때 우선적으로 활용되는 정보 -->
-  <meta property="twitter:card" content="summary" />
-  <meta property="twitter:site" content="Data Planet" />
-  <meta property="twitter:title" content="Data Planet" />
-  <meta property="twitter:description" content="데이터 플래닛" />
-  <!--  <meta property="twitter:image" content="" />-->
-  <!--  <meta property="twitter:url" content="" />-->
-  <title>Data Planet</title>
-  <!-- 아이콘을 고해상도 png파일로 띄울 때 link로 -->
-  <!-- 따로 링크를 걸어놓지 않으면 프로젝트의 루트 경로에서 favicon.ico를 찾아서 자동으로 띄움 -->
-  <!--  <link rel="icon" href="./favicon.png" />-->
+    <!-- 트위터 카드 : 트위터와 같은 소셜 미디어로 공유될 때 우선적으로 활용되는 정보 -->
+    <meta property="twitter:card" content="summary"/>
+    <meta property="twitter:site" content="Data Planet"/>
+    <meta property="twitter:title" content="Data Planet"/>
+    <meta property="twitter:description" content="데이터 플래닛"/>
+    <!--  <meta property="twitter:image" content="" />-->
+    <!--  <meta property="twitter:url" content="" />-->
+    <title>Data Planet</title>
+    <!-- 아이콘을 고해상도 png파일로 띄울 때 link로 -->
+    <!-- 따로 링크를 걸어놓지 않으면 프로젝트의 루트 경로에서 favicon.ico를 찾아서 자동으로 띄움 -->
+    <!--  <link rel="icon" href="./favicon.png" />-->
 
-  <!-- reset css -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
-  <!-- 폰트 불러오기(google font) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- reset css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <!-- 폰트 불러오기(google font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- material icon을 사용할 수 있게 함 -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- material icon을 사용할 수 있게 함 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- main.css는 가급적 맨 밑에 위치하게 함 -->
-  <link rel="stylesheet" href="../CSS/common.css" />
-  <link rel="stylesheet" href="../CSS/login.css" />
+    <!-- main.css는 가급적 맨 밑에 위치하게 함 -->
+    <link rel="stylesheet" href="../CSS/common.css"/>
+    <link rel="stylesheet" href="../CSS/login.css"/>
 
 
-  <!-- defer : html이 준비가 되면 그때 실행 -->
-  <script defer src="../js/common.js"></script>
-  <script defer src="../js/main.js"></script>
+    <!-- defer : html이 준비가 되면 그때 실행 -->
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/main.js"></script>
 </head>
 
 <body>
 <!-- Header -->
-  <section class="signin">
+<section class="signin">
     <h1>로그인</h1>
     <div class="signin__card">
-      <h2>
-        <strong>Welcome!</strong> 데이터 플래닛에 오신걸 환영합니다
-      </h2>
-      <form>
-        <input type="text" placeholder="아이디를 입력하세요."/>
-        <input type="password" placeholder="비밀번호를 입력하세요."/>
-        <input type="submit" placeholder="로그인"/>
-        <p>
-          *비밀번호를 타 사이트와 같이 사용할 경우 도용 위험이 있으니,<br />
-          정기적으로 비밀번호를 변경하세요!
-        </p>
-      </form>
-      <div class="actions">
-        <a href="javascript:void(0)">회원가입</a>
-        <a href="javascript:void(0)">아이디 찾기</a>
-        <a href="javascript:void(0)">비밀번호 찾기</a>
-      </div>
+        <h2>
+            <strong>Welcome!</strong> 데이터 플래닛에 오신걸 환영합니다
+        </h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="email" placeholder="이메일을 입력하세요."/>
+            <input type="password" name="password" placeholder="비밀번호를 입력하세요."/>
+            <input type="submit" placeholder="로그인"/>
+            <p>
+                *비밀번호를 타 사이트와 같이 사용할 경우 도용 위험이 있으니,<br/><br/>
+                정기적으로 비밀번호를 변경하세요!
+            </p>
+        </form>
+        <div class="actions">
+            <a href="/signup">회원가입</a>
+            <a href="javascript:void(0)">아이디 찾기</a>
+            <a href="javascript:void(0)">비밀번호 찾기</a>
+        </div>
     </div>
-  </section>
-
+</section>
 
 
 </body>

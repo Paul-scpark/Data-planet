@@ -3,110 +3,150 @@
 {% load static %}
 
 <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 오픈 그래프 : 카톡과 같은 메신저에서 띄워주는 정보 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Data Planet" />
+    <meta property="og:title" content="Data Planet" />
+    <meta property="og:description" content="데이터 플래닛" />
+    <!--  <meta property="og:image" content=" />-->
+    <!--  <meta property="og:url" content="" />-->
+
+    <!-- 트위터 카드 : 트위터와 같은 소셜 미디어로 공유될 때 우선적으로 활용되는 정보 -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Data Planet" />
+    <meta property="twitter:title" content="Data Planet" />
+    <meta property="twitter:description" content="데이터 플래닛" />
+    <!--  <meta property="twitter:image" content="" />-->
+    <!--  <meta property="twitter:url" content="" />-->
+    <title>Data Planet</title>
+    <!-- 아이콘을 고해상도 png파일로 띄울 때 link로 -->
+    <!-- 따로 링크를 걸어놓지 않으면 프로젝트의 루트 경로에서 favicon.ico를 찾아서 자동으로 띄움 -->
+    <!--  <link rel="icon" href="./favicon.png" />-->
+
+    <!-- reset css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <!-- 폰트 불러오기(google font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- material icon을 사용할 수 있게 함 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- main.css는 가급적 맨 밑에 위치하게 함 -->
     <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- 오픈 그래프 : 카톡과 같은 메신저에서 띄워주는 정보 -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Data Planet" />
-  <meta property="og:title" content="Data Planet" />
-  <meta property="og:description" content="데이터 플래닛" />
-  <!--  <meta property="og:image" content=" />-->
-  <!--  <meta property="og:url" content="" />-->
-
-  <!-- 트위터 카드 : 트위터와 같은 소셜 미디어로 공유될 때 우선적으로 활용되는 정보 -->
-  <meta property="twitter:card" content="summary" />
-  <meta property="twitter:site" content="Data Planet" />
-  <meta property="twitter:title" content="Data Planet" />
-  <meta property="twitter:description" content="데이터 플래닛" />
-  <!--  <meta property="twitter:image" content="" />-->
-  <!--  <meta property="twitter:url" content="" />-->
-  <title>Data Planet</title>
-  <!-- 아이콘을 고해상도 png파일로 띄울 때 link로 -->
-  <!-- 따로 링크를 걸어놓지 않으면 프로젝트의 루트 경로에서 favicon.ico를 찾아서 자동으로 띄움 -->
-  <!--  <link rel="icon" href="./favicon.png" />-->
-
-  <!-- reset css -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
-  <!-- 폰트 불러오기(google font) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- material icon을 사용할 수 있게 함 -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- main.css는 가급적 맨 밑에 위치하게 함 -->
-  <link rel="stylesheet" href="../CSS/common.css" />
-  <link rel="stylesheet" href="../CSS/signup.css" />
 
 
-  <!-- defer : html이 준비가 되면 그때 실행 -->
-  <script defer src="../js/common.js"></script>
-  <script defer src="../js/main.js"></script>
+    <!-- defer : html이 준비가 되면 그때 실행 -->
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/main.js"></script>
 </head>
 
 <body>
-    {% include 'apps/navbar.html' %}
-  <div>
-
+{% include 'apps/navbar.html' %}
+<!--
+<div>
     <section class="signup">
-      <div class="signup__card">
-        <h1>
-          <strong>Welcome!</strong> 데이터 플래닛에 오신걸 환영합니다
-        </h1>
+        <div class="signup__card">
+            <h1>
+                <strong>Welcome!</strong> 데이터 플래닛에 오신걸 환영합니다
+            </h1>
+            <form method="POST">
+                csrf_token 코드 였던 부분
+                <label for="name">이름</label>
+                <input type="text" name="name" placeholder="이름을 입력하세요."/>
 
-        <div class="signup__table">
-          <!-- 이메일 입력 -->
-          <div class="joinRow idDiv">
-            <span style="height:36px">
-              <label for="userId" class="label_hidden">아이디(이메일)</label>
-              <input type="text" id="userId" name="userId" placeholder="이메일을 입력하세요.">
+                <label for="email">이메일</label>
+                <input type="text" name="email" placeholder="이메일 입력하세요."/>
 
-          <!-- 인증번호 전송 -->
-              <div id="a_sendcerti_div">
-                <a id="a_sendCerti" href="javascript:;" class="btn_gray floatR">인증번호 전송</a>
-              </div>
-            </span>
-          </div>
+                <label for="password">비밀번호</label>
+                <input type="password" name="password" placeholder="비밀번호를 입력하세요."/>
 
-          <!-- 추후 인증번호 인증 구현 -->
-          <div id="div_checkCerti" class="joinRow authNoDiv" style="display: none;">
-            <span style="height:36px">
-            <label for="certiNum" class="label_hidden">인증번호 입력</label>
-            <input type="text" id="certiNum" name="certiNum" placeholder="인증번호 입력" style="border: 1px solid #e5e5e5;">
-            </span>	
-            <a id="test1" href="javascript:fn_checkCertiNum();" class="btnWhite floatR">인증번호 확인</a>
-            <div id="div_userId" class="error ok" style="display:#none;  margin-top: 8px;">인증번호를 입력해주세요</div>	
-          </div>
+                <label for="password_check">비밀번호 확인</label>
+                <input type="password" name="password_check" placeholder="비밀번호를 한번 더 입력하세요."/>
 
-          <!-- 비밀번호 입력 -->
-          <div class="joinRow pwDiv">
-            <span>
-            <label for="userPass" class="label_hidden">비밀번호</label>
-            <input type="password" id="userPass" name="userPass" placeholder="비밀번호를 입력하세요." style="border: 1px solid #e5e5e5;">
-            </span>
-          </div>
+                <input type="submit" placeholder="로그인"/>
+            </form>
 
-          <!-- 비밀번호 확인 -->
-          <div class="joinRow pwDiv">
-            <span>
-            <label for="userPass2" class="label_hidden">비밀번호 확인</label>
-            <input type="password" id="userPass2" name="userPass2" title="password" placeholder="비밀번호를 한 번 더 입력하세요." style="border: 1px solid #e5e5e5;">
-          </span>
-          </div>
-
-          <!-- 최종제출 -->
-          <div class="submit_btn">
-            <input type="submit" placeholder="로그인">
-          </div>
         </div>
     </section>
-  </div>
+</div>
+-->
+<section class="signup">
+    <div class="signup__card">
+        <h1>
+            <br/>
+            <strong>Welcome!</strong> 데이터 플래닛에 오신걸 환영합니다.
+            <br/><br/>
+        </h1>
 
+        <form method="POST">
+            {% csrf_token %}
+            <div class="signup__table">
+                <!-- 이름 입력 -->
+                <div class="joinRow pwDiv">
+              <span>
+                <label for="name"></label>
+                <input type="text" id="userName" name="name" placeholder="이름을 입력하세요."
+                       style="border: 1px solid #e5e5e5;">
+              </span>
+                </div>
 
+                <!-- 이메일 입력 -->
+                <div class="joinRow idDiv">
+              <span style="height:36px">
+                <label for="email" class="label_hidden">아이디(이메일)</label>
+                <input type="text" id="userEmail" name="email" placeholder="이메일을 입력하세요.">
+
+                  <!-- 인증번호 전송 -->
+                <div id="a_sendcerti_div">
+                  <a id="a_sendCerti" href="javascript:;" class="btn_gray floatR">인증번호 전송</a>
+                </div>
+              </span>
+                </div>
+
+                <!-- 추후 인증번호 인증 구현 -->
+                <div id="div_checkCerti" class="joinRow authNoDiv" style="display: none;">
+              <span style="height:36px">
+              <label for="certiNum" class="label_hidden">인증번호 입력</label>
+              <input type="text" id="certiNum" name="certiNum" placeholder="인증번호 입력" style="border: 1px solid #e5e5e5;">
+              </span>
+                    <a id="test1" href="javascript:fn_checkCertiNum();" class="btnWhite floatR">인증번호 확인</a>
+                    <div id="div_userId" class="error ok" style="display:#none;  margin-top: 8px;">인증번호를 입력해주세요</div>
+                </div>
+
+                <!-- 비밀번호 입력 -->
+                <div class="joinRow pwDiv">
+              <span>
+              <label for="password" class="label_hidden">비밀번호</label>
+              <input type="password" id="userPassword" name="password" placeholder="비밀번호를 입력하세요."
+                     style="border: 1px solid #e5e5e5;">
+              </span>
+                </div>
+
+                <!-- 비밀번호 확인 -->
+                <div class="joinRow pwDiv">
+              <span>
+              <label for="password_check" class="label_hidden">비밀번호 확인</label>
+              <input type="password" id="userPassword2" name="password_check" title="password"
+                     placeholder="비밀번호를 한번 더 입력하세요." style="border: 1px solid #e5e5e5;">
+            </span>
+                </div>
+
+                <!-- 최종제출 -->
+                <div class="submit_btn">
+                    <input type="submit" placeholder="로그인">
+                </div>
+            </div>
+        </form>
+</section>
+</div>
 </body>
 </html>
+
+
 
